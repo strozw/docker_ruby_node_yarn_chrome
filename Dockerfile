@@ -1,10 +1,10 @@
-ARG RUBY_VERSION=2.6.5
+ARG RUBY_VERSION=2.4.6
 
 FROM ruby:$RUBY_VERSION
 
-ARG NODE_VERSION=10.16.0
+ARG NODE_VERSION=12.14.1
 ARG BUNDLER_VERSION=1.17.3
-ARG YARN_VERSION=1.21.1
+ARG YARN_VERSION=1.22.0
 ARG SRC_DIR=/usr/local/src
 
 # addo node.js to source list
@@ -45,7 +45,7 @@ RUN set -x && \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
       build-essential \
       nodejs \
-      yarn=$YARN_VERSION-1 \
+      yarn=$YARN_VERSION \
       google-chrome-stable \
       fonts-ipa*
 
