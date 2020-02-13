@@ -4,7 +4,6 @@ FROM ruby:$RUBY_VERSION
 
 ARG NODE_VERSION=12.14.1
 ARG BUNDLER_VERSION=1.17.3
-ARG YARN_VERSION=1.22.0
 ARG SRC_DIR=/usr/local/src
 
 # addo node.js to source list
@@ -45,7 +44,7 @@ RUN set -x && \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
       build-essential \
       nodejs \
-      yarn=$YARN_VERSION \
+      yarn \
       google-chrome-stable \
       fonts-ipa*
 
