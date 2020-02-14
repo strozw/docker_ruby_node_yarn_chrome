@@ -6,10 +6,6 @@ ARG NODE_VERSION=12.14.1
 ARG BUNDLER_VERSION=1.17.3
 ARG SRC_DIR=/usr/local/src
 
-# addo node.js to source list
-# RUN set -x && \
-#     curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR_VERSION.x | bash -
-
 # install node.js from archive
 RUN set -x && \
     mkdir -p /usr/local/lib/nodejs && \
@@ -47,10 +43,6 @@ RUN set -x && \
       yarn \
       google-chrome-stable \
       fonts-ipa*
-
-# 外部のAptfileで他に必要なものをインストール
-# COPY .dockerdev/Aptfile /tmp/Aptfile
-# RUN DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends $(cat /tmp/Aptfile | xargs)
 
 # cleanup install logs
 RUN set -x && \
